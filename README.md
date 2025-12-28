@@ -14,7 +14,7 @@ Make sure you have **Node.js** and **npm** installed.
 
 ```sh
 # Clone the repository
-git clone https://github.com/arshath0708/portfolio.git
+git clone https://github.com/arshath0708/arshath-portfolio.git
 
 # Navigate into the project folder
 cd portfolio
