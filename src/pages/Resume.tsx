@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Download, ArrowUpRight } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
 
-const RESUME_URL = "/resume/Arshath_Abdulla_Resume.pdf";
+const RESUME_URL = "/resume/ARSHATH ABDULLA A.pdf";
 
 const Resume = () => {
   return (
