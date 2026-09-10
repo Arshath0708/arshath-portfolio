@@ -16,13 +16,13 @@ const Resume = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <p className="section-title">Resume</p>
+            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">Resume</p>
             <h1 className="heading-xl mb-6">
               Professional <span className="text-primary">Profile</span>
             </h1>
             <p className="body-lg max-w-2xl mx-auto">
-              A formal representation of my experience and systems I have owned.
-              For deeper context, explore the Projects and About sections.
+              A formal representation of my experience bridging business, data, and technology.
+              For deeper context, explore the Case Studies and About sections.
             </p>
           </motion.div>
 
@@ -31,7 +31,7 @@ const Resume = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-card border border-border rounded-xl p-8 md:p-12 mb-12"
+            className="bg-card border border-border/80 rounded-xl p-8 md:p-12 mb-12 shadow-sm"
           >
             {/* Identity */}
             <div className="text-center mb-12 pb-8 border-b border-border/50">
@@ -39,7 +39,7 @@ const Resume = () => {
                 ARSHATH ABDULLA A
               </h2>
               <p className="text-primary font-medium mb-4">
-                AI & Data Science Engineer
+                Business Systems Analyst &amp; Web Developer
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
                 <span>a.arshathabdulla@gmail.com</span>
@@ -47,6 +47,8 @@ const Resume = () => {
                 <span>+91 84288 58856</span>
                 <span className="hidden md:inline">|</span>
                 <span>LinkedIn: arshath0708</span>
+                <span className="hidden md:inline">|</span>
+                <span>Chennai, India</span>
               </div>
             </div>
 
@@ -55,11 +57,8 @@ const Resume = () => {
               <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">
                 Professional Summary
               </h3>
-              <p className="body-md">
-                AI & Data Science undergraduate with hands-on experience in
-                building production-ready systems across machine learning,
-                analytics, and full-stack platforms. Known for ownership,
-                disciplined execution, and converting ideas into usable systems.
+              <p className="body-md text-muted-foreground leading-relaxed">
+                Analytical and technically proficient undergraduate with 9+ years of hands-on retail business experience and active production engineering experience. Currently working as a Web Developer at Spirezen Enterprises, specializing in bridging business requirements with technical execution. Proven ability to analyze workflows, extract insights from data using SQL and Power BI, and collaborate across teams to deliver practical solutions.
               </p>
             </div>
 
@@ -72,29 +71,37 @@ const Resume = () => {
               <div className="space-y-6">
                 <div>
                   <p className="font-semibold text-foreground">
-                    Data Science Intern — Vinsup Infotech (P) Ltd
+                    Web Developer — Spirezen Enterprises Pvt Ltd
                   </p>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Jul 2025 – Aug 2025 | Madurai
+                  <p className="text-sm text-primary font-medium mb-2">
+                    May 2026 – Present
                   </p>
-                  <p className="body-md">
-                    Worked on real datasets involving cleaning, feature
-                    engineering, exploratory analysis, and basic predictive
-                    modeling using Python and Pandas.
+                  <p className="body-md text-muted-foreground leading-relaxed">
+                    Collaborate with business stakeholders to translate functional requirements into scalable production features. Deliver backend services, REST APIs, and workflow automation for a live e-commerce platform, resolving operational bottlenecks through root-cause analysis.
                   </p>
                 </div>
 
                 <div>
                   <p className="font-semibold text-foreground">
-                    Operations & Systems Assistant — Kanmani Readymades
+                    Retail Operations & Analytics — Kanmani Readymades
                   </p>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Apr 2022 – Present | Madurai
+                  <p className="text-sm text-primary font-medium mb-2">
+                    Jan 2017 – Present
                   </p>
-                  <p className="body-md">
-                    Independently managed billing, customer handling, and
-                    inventory workflows. Later engineered a custom payment
-                    tracking system to improve operational clarity.
+                  <p className="body-md text-muted-foreground leading-relaxed">
+                    Independently manage retail operations, tracking profitability and analyzing seasonal demand. Designed a custom operational tracking system to improve business clarity, reduce inventory waste, and drive data-backed purchasing decisions.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-semibold text-foreground">
+                    AI Intern (Data & BI Focus) — Microsoft Elevate
+                  </p>
+                  <p className="text-sm text-primary font-medium mb-2">
+                    Dec 2025 – Jan 2026
+                  </p>
+                  <p className="body-md text-muted-foreground leading-relaxed">
+                    Delivered a Consultant-Level Power BI dashboard to analyze profitability and regional performance across a Global Superstore dataset. Built a Random Forest sales-prediction model trained on 421K+ records to support inventory forecasting.
                   </p>
                 </div>
               </div>
@@ -103,7 +110,7 @@ const Resume = () => {
             {/* Projects */}
             <div className="mb-10">
               <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4">
-                Key Systems Built
+                Key Case Studies
               </h3>
 
               <div className="space-y-4">
@@ -111,29 +118,26 @@ const Resume = () => {
                   <p className="font-semibold text-foreground">
                     SRM Relay — Institutional Communication Platform
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    Role-based system with admin controls, persistent inbox,
-                    audio messages, and real deployment within SRM Madurai.
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Gathered requirements from institutional leadership to map out role-based workflows. Built and deployed a secure communication platform recognized by the Principal for solving a genuine operational bottleneck.
                   </p>
                 </div>
 
                 <div>
                   <p className="font-semibold text-foreground">
-                    Smart Health Prediction System
+                    Digital Library — AI Document-to-Audio Platform
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    ML-based disease prediction engine using RandomForest across
-                    55+ conditions with guidance output.
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Designed system architecture and integrated AI-based text-to-speech functionality deployed on cloud infrastructure, handling robust API communication and multi-format document processing.
                   </p>
                 </div>
 
                 <div>
                   <p className="font-semibold text-foreground">
-                    GPA / CGPA Calculator (Anna University)
+                    Consultant-Level Business Insights Dashboard
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    Streamlit application with semester logic and downloadable
-                    PDF reports.
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Structured KPI-driven Power BI reports for both technical and non-technical stakeholders, translating raw data into actionable recommendations to identify loss-making products.
                   </p>
                 </div>
               </div>
@@ -174,7 +178,7 @@ const Resume = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center text-sm text-muted-foreground mt-8"
           >
-            This resume reflects real systems, real responsibility, and verified work.
+            This resume reflects genuine business experience, real engineering responsibility, and verified work.
           </motion.p>
         </div>
       </main>

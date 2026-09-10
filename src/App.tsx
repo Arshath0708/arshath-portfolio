@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import BackToTop from "./components/BackToTop";
+import CustomCursor from "./components/CustomCursor";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -42,6 +45,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <CustomCursor />
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen">
           <Navigation />
           <div className="flex-1">
@@ -49,6 +54,7 @@ const App = () => (
           </div>
           <Footer />
         </div>
+        <BackToTop />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

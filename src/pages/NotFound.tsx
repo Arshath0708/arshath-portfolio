@@ -1,5 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { ArrowLeft } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
@@ -9,15 +11,30 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </a>
-      </div>
-    </div>
+    <main className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <div className="absolute inset-0 bg-grid -z-10" />
+      <div className="bg-glow-blob -z-10 w-96 h-96 top-1/3 left-1/2 -translate-x-1/2 animate-drift" aria-hidden />
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center px-6"
+      >
+        <p className="section-title justify-center">Error</p>
+        <h1 className="font-mono text-7xl md:text-8xl font-bold text-primary text-glow mb-4 tracking-tight">
+          404
+        </h1>
+        <p className="body-lg mb-2">This route doesn't exist in the system.</p>
+        <p className="font-mono text-sm text-muted-foreground/70 mb-10">
+          {location.pathname}
+        </p>
+        <Link to="/" className="btn-primary group">
+          <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+          Return Home
+        </Link>
+      </motion.div>
+    </main>
   );
 };
 

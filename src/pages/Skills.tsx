@@ -1,221 +1,170 @@
 import { motion } from "framer-motion";
+import { Briefcase, Database, Code, ShieldCheck } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
 
-const primarySkills = [
+const skillCategories = [
   {
-    name: "Python",
-    description:
-      "Primary language for data analysis, machine learning, automation, and backend development. Used across academic, business, and internship projects.",
-    applications: [
-      "Machine Learning Models",
-      "Data Analysis & Processing",
-      "Automation Scripts",
-      "Backend Development",
-    ],
+    category: "Business Analysis",
+    icon: Briefcase,
+    description: "Understanding requirements, mapping workflows, and translating business problems into actionable solutions.",
+    skills: [
+      { name: "Business Analysis", context: "End-to-end problem definition" },
+      { name: "Business Process Analysis", context: "Optimizing operations" },
+      { name: "Requirements Analysis", context: "Gathering and documenting needs" },
+      { name: "Workflow Analysis", context: "Mapping user and data flows" },
+      { name: "Root Cause Analysis", context: "Identifying underlying constraints" },
+      { name: "Stakeholder Collaboration", context: "Bridging business and tech teams" },
+    ]
   },
   {
-    name: "Machine Learning",
-    description:
-      "Applying machine learning techniques to solve real-world problems, focusing on clarity, accuracy, and usability rather than academic complexity.",
-    applications: [
-      "Classification & Prediction",
-      "Feature Engineering",
-      "Model Evaluation",
-      "Applied AI Systems",
-    ],
+    category: "Data & Business Intelligence",
+    icon: Database,
+    description: "Extracting insights from data to support objective, data-driven decision making.",
+    skills: [
+      { name: "SQL", context: "Data extraction and manipulation" },
+      { name: "Power BI", context: "Interactive dashboards and reporting" },
+      { name: "Excel", context: "Data modeling and ad-hoc analysis" },
+      { name: "Data Analysis", context: "Identifying trends and patterns" },
+      { name: "Data Visualization", context: "Communicating complex metrics clearly" },
+      { name: "KPI Analysis", context: "Tracking business performance" },
+    ]
   },
   {
-    name: "Data Analysis",
-    description:
-      "Transforming raw data into insights through structured analysis, visualization, and business-oriented interpretation.",
-    applications: [
-      "Exploratory Data Analysis",
-      "Trend & Pattern Identification",
-      "Business Insights",
-      "Decision Support",
-    ],
-  },
-  {
-    name: "SQL",
-    description:
-      "Working with relational databases to store, retrieve, and analyze structured data efficiently.",
-    applications: [
-      "Query Writing",
-      "Data Extraction",
-      "Relational Modeling",
-      "Analytical Queries",
-    ],
-  },
+    category: "Technology Systems",
+    icon: Code,
+    description: "Engineering robust, scalable solutions to execute business logic and integrate systems.",
+    skills: [
+      { name: "REST APIs", context: "System-to-system communication" },
+      { name: "Webhooks", context: "Real-time event integration" },
+      { name: "System Integration", context: "Connecting disparate platforms" },
+      { name: "Database Concepts", context: "Relational modeling and architecture" },
+      { name: "Python", context: "Automation and backend logic" },
+      { name: "Git / GitHub", context: "Version control and collaboration" },
+    ]
+  }
 ];
 
 const supportingSkills = [
-  {
-    name: "Power BI",
-    description:
-      "Building interactive dashboards and visual reports to communicate insights clearly to technical and non-technical stakeholders.",
-  },
-  {
-    name: "Django",
-    description:
-      "Developing full-stack web applications with structured backend logic, authentication, and database integration.",
-  },
-  {
-    name: "Flask",
-    description:
-      "Creating lightweight APIs and ML-backed applications for rapid prototyping and deployment.",
-  },
-  {
-    name: "Streamlit",
-    description:
-      "Building data-driven and ML-powered web applications for fast experimentation and real-world use.",
-  },
-  {
-    name: "Git & GitHub",
-    description:
-      "Version control, project collaboration, and maintaining clean, traceable development histories.",
-  },
-  {
-    name: "Microsoft Azure (Fundamentals)",
-    description:
-      "Foundational understanding of cloud concepts, services, and analytics workflows through Microsoft Elevate training.",
-  },
-  {
-    name: "Generative AI & NLP",
-    description:
-      "Hands-on exposure to generative AI concepts, NLP fundamentals, and retrieval-augmented generation systems.",
-  },
-  {
-    name: "Power BI & Data Visualization",
-    description:
-      "Designing dashboards and reports that translate complex data into actionable business insights.",
-  },
-  {
-    name: "Business & Retail Analytics",
-    description:
-      "Applying analytical thinking to real retail operations including sales analysis, inventory planning, and customer behavior.",
-  },
+  "Machine Learning Pipelines",
+  "Generative AI & NLP Concepts",
+  "Django & Flask Frameworks",
+  "Microsoft Azure (Fundamentals)",
+  "Frontend Web Development",
+  "Predictive Modeling",
 ];
 
 const Skills = () => {
   return (
     <PageTransition>
-      <main className="pt-28 md:pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <main className="pt-28 md:pt-32 pb-20 relative">
+        <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mb-16"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-3xl mb-24"
           >
-            <p className="section-title">Skills</p>
-            <h1 className="heading-xl mb-6">
-              Capabilities Built Through{" "}
-              <span className="text-primary">Execution</span>
+            <p className="section-title">Competencies</p>
+            <h1 className="heading-xl mb-6 text-foreground">
+              Bridging <span className="text-primary">Business & Tech</span>
             </h1>
             <p className="body-lg">
-              These skills were developed through hands-on projects, internships,
-              business operations, and continuous learning. I focus on applying
-              the right tool to solve the right problem.
+              My core capability lies at the intersection of understanding business operations, analyzing data to make informed decisions, and leveraging technology to build practical systems.
             </p>
           </motion.div>
 
-          {/* Primary Skills */}
-          <div className="mb-20">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="heading-md mb-8 line-accent pb-4"
-            >
-              Core Technical Skills
-            </motion.h2>
-
-            <div className="space-y-6">
-              {primarySkills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="card-dark"
-                >
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="md:col-span-2">
-                      <h3 className="text-xl font-semibold text-foreground mb-3">
-                        {skill.name}
-                      </h3>
-                      <p className="body-md">{skill.description}</p>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">
-                        Applied In
-                      </h4>
-                      <ul className="space-y-2">
-                        {skill.applications.map((app) => (
-                          <li
-                            key={app}
-                            className="flex items-center gap-2 text-sm text-muted-foreground"
-                          >
-                            <span className="w-1.5 h-1.5 bg-primary rounded-full" />
-                            {app}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+          {/* Core Categories / Pillars */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-32">
+            {skillCategories.map((group, index) => (
+              <motion.div
+                key={group.category}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="card-dark flex flex-col group"
+              >
+                <div className="mb-8 pb-6 border-b border-white/5 relative">
+                  <div className="absolute top-0 right-0 font-mono text-6xl font-bold text-primary/5 select-none pointer-events-none transition-colors duration-500 group-hover:text-primary/10 -mt-2 -mr-2">
+                    0{index + 1}
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 text-primary group-hover:scale-110 transition-transform duration-500 shadow-[0_0_15px_rgba(230,168,9,0.1)]">
+                    <group.icon className="w-6 h-6" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {group.category}
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {group.description}
+                  </p>
+                </div>
+                
+                <div className="flex-1 flex flex-col gap-5">
+                  {group.skills.map((skill) => (
+                    <div key={skill.name} className="flex items-start gap-4 group/skill">
+                      <div className="w-6 h-6 rounded bg-card flex items-center justify-center border border-border/50 shrink-0 mt-0.5 group-hover/skill:border-primary/50 transition-colors">
+                        <span className="w-1.5 h-1.5 bg-primary/50 rounded-full group-hover/skill:bg-primary transition-colors" />
+                      </div>
+                      <div>
+                        <h3 className="text-foreground font-semibold text-sm mb-1 group-hover/skill:text-primary transition-colors">
+                          {skill.name}
+                        </h3>
+                        <p className="text-xs text-muted-foreground">
+                          {skill.context}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Supporting Skills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="border-t border-border/30 pt-12"
-          >
-            <h2 className="heading-md mb-8 line-accent pb-4">
-              Supporting & Applied Skills
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {supportingSkills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="p-6 bg-card border border-border/50 rounded-lg"
-                >
-                  <h3 className="text-foreground font-semibold mb-2">
-                    {skill.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {skill.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          <div className="grid md:grid-cols-[1.5fr_1fr] gap-12 lg:gap-16 items-start">
+            {/* Supporting Technical Skills */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <div className="flex items-center gap-3 mb-8 pb-4 border-b border-white/5">
+                <ShieldCheck className="text-primary w-5 h-5" />
+                <h2 className="text-xl font-bold text-foreground">
+                  Supporting Technical Foundations
+                </h2>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {supportingSkills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="px-4 py-2 bg-card/30 border border-border/40 hover:border-primary/30 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-          {/* Philosophy */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mt-16 p-8 bg-gradient-to-r from-primary/5 to-transparent border-l-2 border-primary rounded-r-lg"
-          >
-            <p className="text-foreground italic">
-              “Skills compound when they are applied to real problems. I focus on
-              learning deeply, building practically, and improving continuously.”
-            </p>
-          </motion.div>
+            {/* Philosophy */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="card-dark p-8 md:p-10 border-l-4 border-l-primary relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 text-9xl text-primary/5 font-serif leading-none -mt-4 -mr-4 pointer-events-none">
+                "
+              </div>
+              <p className="text-foreground/90 italic text-lg leading-relaxed relative z-10 font-medium">
+                Technical depth matters, but it's the ability to apply that depth to solve real business problems that creates true value.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </main>
     </PageTransition>
